@@ -67,3 +67,8 @@ j
 .reco-plan img {
     height: 300px;
 }
+
+footer {
+    background-image: url(images/common/footer-spring.png);
+    background-size: cover;
+}

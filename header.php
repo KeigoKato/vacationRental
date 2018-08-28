@@ -49,6 +49,12 @@
                                 <!-- nav-link...ナビゲーションリンクを作成 -->
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="#">お部屋</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">お食事</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="#">周辺観光</a>
                             </li>
                             <li class="nav-item">
