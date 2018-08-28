@@ -58,6 +58,10 @@ j
     height: 400px;
 }
 
+.main-intro img:hover {
+    opacity: 0.7;
+}
+
 .main-intro .card-body {
     color: white;
     position: absolute;
@@ -68,12 +72,20 @@ j
     height: 150px;
 }
 
+.new-info img:hover {
+    opacity: 0.7;
+}
+
 .main-intro .card {
     border: 1px solid black;
 }
 
 .reco-plan img {
     height: 300px;
+}
+
+.reco-plan img:hover {
+    opacity: 0.7;
 }
 
 footer {
