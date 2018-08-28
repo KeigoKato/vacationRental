@@ -1,0 +1,69 @@
+/*
+Theme Name: Hotel Vacation Rental
+Theme URI: http://localhost:8888/wordpress/
+Author: keitaro
+Description: このサイトは民泊を掲載されている方向けのHPです
+Version: 1.0
+*/
+
+body {
+    font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ P明朝", "MS PMincho", sans-serif;
+}
+
+header {
+    margin-top: 32px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+}
+
+.cover {
+    height: 80vh;
+    background: url(images/header/jumbo-001.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+j
+#custom-menu li {
+    display: inline-block;
+}
+
+.concept {
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.main-intro .card {
+    border: none;
+}
+
+.main-intro img {
+    height: 400px;
+}
+
+.main-intro .card-body {
+    color: white;
+    position: absolute;
+    top: 230px;
+}
+
+.new-info img {
+    height: 150px;
+}
+
+.main-intro .card {
+    border: 1px solid black;
+}
+
+.reco-plan img {
+    height: 300px;
+}
