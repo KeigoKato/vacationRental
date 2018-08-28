@@ -42,6 +42,14 @@ j
     align-items: center;
 }
 
+.reserve h4 {
+    background-color: #8B0000;
+}
+
+.reserve .card {
+    border: 2px solid #8B0000;
+}
+
 .main-intro .card {
     border: none;
 }

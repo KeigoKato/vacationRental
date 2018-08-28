@@ -15,7 +15,21 @@
                 </div>
             </div>
 
-            <div class="main-intro">
+            <div class="container">
+                <div class="row reserve pb-5">
+                    <div class="col-12">
+                        <div class="card mb-3 rounded-0">
+                            <h4 class="card-header text-center text-white rounded-0">かんたん空室検索</h4>
+                            <div class="card-body text-dark">
+                                <h5 class="card-title">Dark card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-intro py-5">
                 <div class="card-group">
                     <!-- card-group...一連のカードを連結して均一サイズでグループ化する -->
                     <div class="card border-0">
@@ -26,7 +40,7 @@
                             <div class="card-body px-5">
                                 <!-- card-body...カードの本文エリアを作成する -->
                                 <section>
-                                    <h2 class="card-title">温泉</h5>
+                                    <h2 class="card-title">お食事</h5>
                                     <!-- card-title...h要素に追加してカードのタイトルを作成する -->
                                     <p class="card-text">
                                         <!-- card-text...p要素などのテキスト要素に追加してカードのテキストを作成 -->
@@ -54,7 +68,7 @@
                             <img class="card-img-top rounded-0" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/top/top-03.png" alt="Card image cap">
                             <div class="card-body px-5">
                                 <section>
-                                    <h2 class="card-title">温泉</h5>
+                                    <h2 class="card-title">お部屋</h5>
                                     <p class="card-text">
                                         ああああああああああああああああああああああああああああああああああ
                                     </p>
@@ -67,7 +81,7 @@
                             <img class="card-img-top rounded-0" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/top/top-04.png" alt="Card image cap">
                             <div class="card-body px-5">
                                 <section>
-                                    <h2 class="card-title">温泉</h5>
+                                    <h2 class="card-title">周辺観光</h5>
                                     <p class="card-text">
                                         ああああああああああああああああああああああああああああああああああ
                                     </p>
