@@ -1,80 +1,6 @@
-<!doctype html>
-<html <?php language_attributes(); ?>>
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="<?php bloginfo('charset'); ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-        <title>Hello, world!</title>
-        <?php
-            wp_enqueue_style(
-                'base-style',
-                esc_url(get_stylesheet_uri()),
-                array(),
-                '1.0',
-                'all'
-            );
-        ?>
-    </head>
-
-    <body>
-        <header>
-            <div class="container-fluid">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <!-- navbar...ナビゲーションバーとして扱う
-                    navbar-expand-lg...widthがlg以上になったらバーのメニューを展開する
-                    navbar-light...バーの色を灰色にする -->
-                    <a class="navbar-brand" href="#">Site Logo</a>
-                    <!-- navbar-brand...社名とかにつける -->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
-                        <!-- navbar-toggler...ナビゲーションの表示切り替えボタンにする
-                        data-toggle="collapse"...折りたたみが可能なコンテンツにするために必要で、lg以上の場合は開いておきたいのでcollapseにする
-                        data-target...折りたたむulタグの親のdivタグを指定する -->
-                        <span class="navbar-toggler-icon"></span>
-                        <!-- navbar-toggler-icon...これを書くだけでハンバーガーアイコンになる -->
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarText">
-                        <!-- collapse...基本的には折りたたむが、
-                        navbar-collapse...ブラウザ幅がlg以下になったらcollapseする
-                        collapse navbar-collapseと書くとナビゲーションバー内に切り替え表示されるコンテンツを指定する -->
-                        <ul class="navbar-nav ml-auto">
-                            <!-- navbar-nav...ナビゲーションバー内にナビゲーションを作成する
-                            ml-auto...margin-left:auto;にすることで左端にくる -->
-                            <li class="nav-item">
-                                <!-- nav-item...ナビゲーション項目を作成する -->
-                                <a class="nav-link" href="#">館内施設</a>
-                                <!-- nav-link...ナビゲーションリンクを作成 -->
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">周辺観光</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">予約プラン</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">お問い合わせ</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-
-            <div class="cover text-center text-white">
-                <section>
-                    <h1 class="display-4 py-4">Logo or Title</h1>
-                    <!-- display-4...文字の大きさを指定する -->
-                    <p class="lead"><?php bloginfo('description'); ?></p>
-                    <!-- lead...テキストを目立たせる -->
-                </section>
-            </div>
-        </header>
-
+<?php get_header(); ?>
 
         <div class="main">
-
             <div class="container">
                 <div class="row concept">
                     <div class="col-sm-8 mx-auto">
@@ -89,7 +15,21 @@
                 </div>
             </div>
 
-            <div class="main-intro">
+            <div class="container">
+                <div class="row reserve pb-5">
+                    <div class="col-12">
+                        <div class="card mb-3 rounded-0">
+                            <h4 class="card-header text-center text-white rounded-0">かんたん空室検索</h4>
+                            <div class="card-body text-dark">
+                                <h5 class="card-title">Dark card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-intro py-5">
                 <div class="card-group">
                     <!-- card-group...一連のカードを連結して均一サイズでグループ化する -->
                     <div class="card border-0">
@@ -100,7 +40,7 @@
                             <div class="card-body px-5">
                                 <!-- card-body...カードの本文エリアを作成する -->
                                 <section>
-                                    <h2 class="card-title">温泉</h5>
+                                    <h2 class="card-title">お食事</h5>
                                     <!-- card-title...h要素に追加してカードのタイトルを作成する -->
                                     <p class="card-text">
                                         <!-- card-text...p要素などのテキスト要素に追加してカードのテキストを作成 -->
@@ -128,7 +68,7 @@
                             <img class="card-img-top rounded-0" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/top/top-03.png" alt="Card image cap">
                             <div class="card-body px-5">
                                 <section>
-                                    <h2 class="card-title">温泉</h5>
+                                    <h2 class="card-title">お部屋</h5>
                                     <p class="card-text">
                                         ああああああああああああああああああああああああああああああああああ
                                     </p>
@@ -141,7 +81,7 @@
                             <img class="card-img-top rounded-0" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/top/top-04.png" alt="Card image cap">
                             <div class="card-body px-5">
                                 <section>
-                                    <h2 class="card-title">温泉</h5>
+                                    <h2 class="card-title">周辺観光</h5>
                                     <p class="card-text">
                                         ああああああああああああああああああああああああああああああああああ
                                     </p>
@@ -213,12 +153,4 @@
 
         </div>
 
-        <footer>
-        </footer>
-        <?php wp_footer(); ?>
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    </body>
-</html>
+<?php get_footer(); ?>

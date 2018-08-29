@@ -42,12 +42,24 @@ j
     align-items: center;
 }
 
+.reserve h4 {
+    background-color: #8B0000;
+}
+
+.reserve .card {
+    border: 2px solid #8B0000;
+}
+
 .main-intro .card {
     border: none;
 }
 
 .main-intro img {
     height: 400px;
+}
+
+.main-intro img:hover {
+    opacity: 0.7;
 }
 
 .main-intro .card-body {
@@ -60,10 +72,23 @@ j
     height: 150px;
 }
 
+.new-info img:hover {
+    opacity: 0.7;
+}
+
 .main-intro .card {
     border: 1px solid black;
 }
 
 .reco-plan img {
     height: 300px;
+}
+
+.reco-plan img:hover {
+    opacity: 0.7;
+}
+
+footer {
+    background-image: url(images/common/footer-spring.png);
+    background-size: cover;
 }
