@@ -8,7 +8,7 @@
 
                 <?php if (have_posts()): ?>
                 <?php while (have_posts()): the_post(); ?>
-                <div class="col-sm-12 article-main mb-5">
+                <div class="col-sm-12 article-top-main mb-5">
                     <div class="article-title">
                         <h1 class="mb-2"><?php the_title(); ?></h1>
                     </div>
@@ -21,7 +21,10 @@
                         </ul> -->
                     </div>
                     <div class="article-image">
-                        <img class="img-fluid" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/common/noimage-large.png" alt="">
+                        <?php if (has_post_thumbnail()): ?>
+                        <!-- <img class="img-fluid" src="<?php // echo esc_url(get_template_directory_uri()); ?>/images/common/noimage-large.png" alt=""> -->
+                        <?php the_post_thumbnail("full"); ?>
+                        <?php endif; ?>
                     </div>
                 </div>
 

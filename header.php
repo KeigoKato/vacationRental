@@ -27,7 +27,7 @@
                     <!-- navbar...ナビゲーションバーとして扱う
                     navbar-expand-lg...widthがlg以上になったらバーのメニューを展開する
                     navbar-light...バーの色を灰色にする -->
-                    <a class="navbar-brand" href="#">Site Logo</a>
+                    <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">Site Logo</a>
                     <!-- navbar-brand...社名とかにつける -->
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
                         <!-- navbar-toggler...ナビゲーションの表示切り替えボタンにする

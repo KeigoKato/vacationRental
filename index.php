@@ -100,20 +100,25 @@
                         <section>
                             <div class="card-deck">
                                 <!-- card-deck...一連のカードを連結せずに均一サイズでグループ化するコンポーネントであり、card-groupとちょっと違う -->
-                                <?php for ($i=0; $i<4; $i++): ?>
+
+                                <?php if (have_posts()): ?>
+                                <?php while (have_posts()): the_post(); ?>
                                 <div class="card rounded-0 border-dark">
                                     <a href="#">
+                                        <?php if (has_post_thumbnail()): ?>
+                                        <?php the_post_thumbnail('full'); ?>
+                                        <?php else: ?>
                                         <img class="card-img-top rounded-0" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/common/noimage-large.png" alt="Card image cap">
+                                        <?php endif; ?>
                                     </a>
                                     <div class="card-body">
-                                        <h5 class="card-title mb-0"><a class="card-link" href="#">秋の準備開始</a></h5>
-                                        <p class="card-text mb-2"><small class="text-muted">2018年 8月 31日 (水)</small></p>
-                                        <p class="card-text">
-                                            祇園精舎の鐘の声、諸行無常の響きあり、沙羅双樹の花の色、盛者必衰の理を表す、奢れる人も久しからず、ただ春の夜の夢のごとし、猛き者も遂には滅びぬ、偏に風の夜の塵に [...]
-                                        </p>
+                                        <h5 class="card-title mb-0"><a class="card-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                                        <p class="card-text mb-2"><small class="text-muted"><?php the_time('Y年 n月 j日 (D)'); ?></small></p>
+                                        <div class="card-text d-none d-md-block"><?php the_excerpt(); ?></div>
                                     </div>
                                 </div>
-                                <?php endfor; ?>
+                                <?php endwhile; ?>
+                                <?php endif; ?>
                             </div>
                         </section>
                     </div>
