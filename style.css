@@ -88,6 +88,41 @@ j
     opacity: 0.7;
 }
 
+.sidebar-categories {
+    font-size: 12px;
+    margin: 3px 0px;
+}
+
+.sidebar-categories-list a {
+    background-color: green;
+}
+
+.sidebar-title {
+    font-size: 14px;
+}
+
+.single-left .card-header {
+    background-image: url(images/common/footer-spring.png);
+    background-size: cover;
+}
+
+
+/*/_/_/_/__/_/_/*/
+/* ▼signle.php */
+/*/_/_/_/__/_/_/*/
+.article-smallinfo .post-categories {
+    text-align: right;
+}
+.post-categories li {
+    display: inline;
+    padding-left: 10px;
+}
+/*/_/_/_/__/_/_/*/
+/* ▲sindle.php */
+/*/_/_/_/__/_/_/*/
+
+
+
 footer {
     background-image: url(images/common/footer-spring.png);
     background-size: cover;

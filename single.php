@@ -1,20 +1,47 @@
-                <div class="row new-other-info">
-                    <div class="col-sm-offset-9 col-sm-3">
-                        <div class="row">
-                            <?php for ($i=0; $i<3; $i++): ?>
-                            <div class="col-sm-12">
-                                <div class="card bg-light mb-3">
-                                    <div class="card-header">新着投稿</div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><a href="">2018年 8月 (5)</a></li>
-                                        <li class="list-group-item"><a href="">2018年 12月 (12)</a></li>
-                                        <li class="list-group-item"><a href="">2018年 12月 (12)</a></li>
-                                        <li class="list-group-item"><a href="">2018年 12月 (12)</a></li>
-                                        <li class="list-group-item"><a href="">2018年 12月 (12)</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <?php endfor; ?>
-                        </div>
+<?php get_header(); ?>
+
+<div class="container">
+    <div class="row py-5">
+
+        <div class="single-right col-sm-9">
+            <div class="row article">
+
+                <?php if (have_posts()): ?>
+                <?php while (have_posts()): the_post(); ?>
+                <div class="col-sm-12 article-main mb-5">
+                    <div class="article-title">
+                        <h1 class="mb-2"><?php the_title(); ?></h1>
+                    </div>
+                    <div class="article-smallinfo">
+                        <p class="mb-2 text-right"><?php the_time('Y年 n月 j日 (D)'); ?></p>
+                        <?php the_category(''); ?>
+                        <!-- <ul class="list-inline text-right">
+                            <li class="list-inline-item"><a href="#">スタッフ日記</a></li>
+                            <li class="list-inline-item"><a href="#">コラム</a></li>
+                        </ul> -->
+                    </div>
+                    <div class="article-image">
+                        <img class="img-fluid" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/common/noimage-large.png" alt="">
                     </div>
                 </div>
+
+                <div class="col-sm-12 article-main">
+                    <?php the_content(); ?>
+                </div>
+                <?php endwhile; ?>
+                <?php endif; ?>
+
+            </div>
+        </div>
+
+        <?php get_sidebar(); ?>
+
+    </div>
+</div>
+
+
+
+
+
+
+<?php get_footer(); ?>
