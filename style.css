@@ -110,6 +110,10 @@ j
 /*/_/_/_/__/_/_/*/
 /* ▼signle.php */
 /*/_/_/_/__/_/_/*/
+.article-main img {
+    max-width: 100%;
+    height: auto;
+}
 .article-smallinfo .post-categories {
     text-align: right;
 }
