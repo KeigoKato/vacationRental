@@ -5,10 +5,10 @@
             <div class="row article">
                 <?php get_template_part('loop', 'single'); ?>
             </div>
-            <nav class="postNavi">
-                <span class="prev"><?php previous_post_link('%link'); ?></span>
-                <div class="next"><?php next_post_link('%link'); ?></div>
-            </nav>
+            <div class="row">
+                <div class="col-sm-6 text-left"><?php previous_post_link('<< %link'); ?></div>
+                <div class="col-sm-6 text-right"><?php next_post_link('%link >>'); ?></div>
+            </div>
         </div>
         <?php get_sidebar(); ?>
     </div>

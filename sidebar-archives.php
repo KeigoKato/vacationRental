@@ -12,9 +12,6 @@
                     'after'           => '</li>'
                 ));
             ?>
-            <!-- <li class="list-group-item py-2 px-4"><a href="">2018年 8月 (5)</a></li>
-            <li class="list-group-item py-2 px-4"><a href="">2018年 12月 (12)</a></li>
-            <li class="list-group-item py-2 px-4"><a href="">2018年 12月 (12)</a></li> -->
         </ul>
     </div>
 </div>

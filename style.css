@@ -111,6 +111,10 @@ j
     background-size: cover;
 }
 
+.single-left li {
+    font-size: 14px;
+}
+
 .wp-post-image {
     max-width: 100%;
     object-fit: cover;

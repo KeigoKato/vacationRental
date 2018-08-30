@@ -58,7 +58,11 @@ function twpp_change_excerpt_more( $more ) {
 }
 add_filter('excerpt_more', 'twpp_change_excerpt_more');
 
-
+/**
+ * サイドバーのウィジェットを作成する
+ *
+ * @return void
+ */
 function custom_widget_register() {
     register_sidebar(array(
         'name' => '投稿記事画面のサイドバー',

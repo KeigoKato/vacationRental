@@ -21,7 +21,7 @@
                             <a class="nav-link" href="#">お問い合わせ</a>
                         </li>
                     </ul>
-                    <h1 class="py-3"><a href="#">Site Logo</a></h1>
+                    <h1 class="py-3"><a href="<?php echo home_url(); ?>">Site Logo</a></h1>
                     <p class="footer-address">
                         東京都目黒区大岡山<br>
                         １−１−１−１<br>

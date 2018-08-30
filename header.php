@@ -86,6 +86,10 @@
                         カテゴリー<br>
                         「<?php wp_title(''); ?>」の投稿一覧
                     </h1>
+                    <?php elseif (is_single()): ?>
+                    <h1 class="display-4 py-4">
+                        投稿記事 詳細<br>
+                    </h1>
                     <?php endif; ?>
                 </section>
             </div>
