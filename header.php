@@ -70,10 +70,23 @@
 
             <div class="cover text-center text-white">
                 <section>
-                    <h1 class="display-4 py-4">Logo or Title</h1>
                     <!-- display-4...文字の大きさを指定する -->
+                    <?php if (is_front_page()): ?>
+                    <h1 class="display-4 py-4">
+                        Logo or Title
+                    </h1>
                     <p class="lead"><?php bloginfo('description'); ?></p>
                     <!-- lead...テキストを目立たせる -->
+                    <?php elseif (is_month()): ?>
+                    <h1 class="display-4 py-4">
+                        <?php the_time('Y年n月'); ?>の投稿一覧
+                    </h1>
+                    <?php elseif (is_category()): ?>
+                    <h1 class="display-4 py-4">
+                        カテゴリー<br>
+                        「<?php wp_title(''); ?>」の投稿一覧
+                    </h1>
+                    <?php endif; ?>
                 </section>
             </div>
         </header>

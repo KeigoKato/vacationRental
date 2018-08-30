@@ -8,6 +8,17 @@ function custom_theme_setup() {
 add_action('after_setup_theme', 'custom_theme_setup');
 
 /**
+ * 投稿内の画像にクラスをつける
+ *
+ * @param [type] $class
+ * @return void
+ */
+function add_post_image_class($class) {
+    return $class.' article-post-image';
+}
+add_filter('get_image_tag_class', 'add_post_image_class');
+
+/**
  * トップページの新着投稿を最大4つに制限する
  *
  * @param [type] $query

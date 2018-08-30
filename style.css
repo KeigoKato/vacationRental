@@ -6,6 +6,11 @@ Description: このサイトは民泊を掲載されている方向けのHPで�
 Version: 1.0
 */
 
+#included-files-list {
+    background-color: rgb(66, 66, 66) !important;
+}
+
+
 body {
     font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ P明朝", "MS PMincho", sans-serif;
 }
@@ -119,20 +124,18 @@ j
     height: 380px;
 } */
 .article-image .wp-post-image {
-    max-width: 100%;
-    height: 380px;
+    margin-bottom: 32px;
+    width: 100%;
+    height: 300px;
     object-fit: cover;
 }
-.article-main img {
+.article-post-image{
     max-width: 100%;
     height: auto;
 }
-.article-smallinfo .post-categories {
-    text-align: right;
-}
 .post-categories li {
     display: inline;
-    padding-left: 10px;
+    padding-right: 10px;
 }
 /*/_/_/_/__/_/_/*/
 /* ▲sindle.php */
