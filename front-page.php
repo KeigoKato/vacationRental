@@ -106,7 +106,7 @@
                                 <?php if (have_posts()): ?>
                                 <?php while (have_posts()): the_post(); ?>
                                 <div class="card rounded-0 border-dark">
-                                    <a href="#">
+                                    <a href="<?php the_permalink(); ?>">
                                         <?php if (has_post_thumbnail()): ?>
                                         <?php the_post_thumbnail(); ?>
                                         <?php else: ?>
@@ -114,7 +114,7 @@
                                         <?php endif; ?>
                                     </a>
                                     <div class="card-body">
-                                        <h5 class="card-title mb-0"><a class="card-link" href="#"><?php the_title(); ?></a></h5>
+                                        <h5 class="card-title mb-0"><a class="card-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
                                         <p class="card-text mb-2"><small class="text-muted"><?php the_time('Y年 n月 j日 (D)'); ?></small></p>
                                         <p class="card-text">
                                             <?php the_excerpt(); ?>
