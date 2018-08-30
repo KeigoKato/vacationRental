@@ -21,8 +21,32 @@
                         <div class="card mb-3 rounded-0">
                             <h4 class="card-header text-center text-white rounded-0">かんたん空室検索</h4>
                             <div class="card-body text-dark">
-                                <h5 class="card-title">Dark card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <form>
+                                    <div class="form-row px-3">
+                                        <div class="form-group col-md-3">
+                                            <label for="day">宿泊日</label>
+                                            <input type="email" class="form-control" id="day" placeholder="Email">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="people">人数</label>
+                                            <input type="email" class="form-control" id="people" placeholder="Email">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="days">宿泊数</label>
+                                            <input type="email" class="form-control" id="days" placeholder="Email">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="rooms">部屋数</label>
+                                            <input type="email" class="form-control" id="rooms" placeholder="Email">
+                                        </div>
+                                        <div class="form-group col-md-2 d-flex align-items-end">
+                                            <button type="submit" class="btn btn-primary">> 空室検索</button>
+                                        </div>
+                                        <div class="form-group col-md-1 d-flex align-items-end">
+                                            <button type="submit" class="btn btn-primary">プラン一覧</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
