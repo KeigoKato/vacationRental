@@ -46,3 +46,28 @@ function twpp_change_excerpt_more( $more ) {
     return $html;
 }
 add_filter('excerpt_more', 'twpp_change_excerpt_more');
+
+
+function custom_widget_register() {
+    register_sidebar(array(
+        'name' => '投稿記事画面のサイドバー',
+        'id' => 'sidebar-primary',
+        'before_widget' => '<div class="card-header text-center text-white rounded-0">',
+        'after_widget' => '</div>',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+}
+add_action('widgets_init', 'custom_widget_register');
+
+/**
+ * wp_list_categories()メソッドのHTML出力におけるliタグのクラス名を変更する
+ *
+ * @param [type] $list
+ * @return void
+ */
+function change_li_class_categories( $list ) {
+    $list = str_replace('<li class="cat-item','<li class="list-group-item py-2 px-4',$list);    // デフォルトでは"cat-item"と出力されるクラスを変更したが正規表現もありあり
+    return $list;
+}
+add_filter ( 'wp_list_categories', 'change_li_class_categories' );
