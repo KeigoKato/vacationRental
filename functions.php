@@ -86,3 +86,18 @@ function change_li_class_categories( $list ) {
     return $list;
 }
 add_filter ( 'wp_list_categories', 'change_li_class_categories' );
+
+
+/**
+ * 投稿記事一覧を固定ページ(blogスラッグ)に表示するためのメソッドを定義
+ *
+ * @return void
+ */
+function getAllPost() {
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 10,
+    );
+    $post_query = new WP_Query($args);
+    return $post_query;
+}
