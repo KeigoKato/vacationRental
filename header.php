@@ -90,6 +90,10 @@
                     <h1 class="display-4 py-4">
                         投稿記事 詳細<br>
                     </h1>
+                    <?php elseif (is_page('blog')): ?>
+                    <h1 class="display-4 py-4">
+                        投稿記事 一覧<br>
+                    </h1>
                     <?php endif; ?>
                 </section>
             </div>

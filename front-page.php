@@ -123,7 +123,7 @@
             <div class="container">
                 <div class="row new-info py-5">
                     <div class="col-12 mx-auto">
-                        <h2 class="display-5 pt-5 pb-4 text-center"><a href="#">新着情報</a></h2>
+                        <h2 class="display-5 pt-5 pb-4 text-center"><a href="<?php echo esc_url(home_url('/blog')); ?>">新着情報</a></h2>
                         <section>
                             <div class="card-deck">
                                 <!-- card-deck...一連のカードを連結せずに均一サイズでグループ化するコンポーネントであり、card-groupとちょっと違う -->
