@@ -10,7 +10,6 @@ Version: 1.0
     background-color: #23282d !important;
 }
 
-
 body {
     font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ P明朝", "MS PMincho", sans-serif;
 }
@@ -150,4 +149,40 @@ j
 footer {
     background-image: url(images/common/footer-spring.png);
     background-size: cover;
+}
+
+
+
+
+
+.wpcf7 .wpcf7-response-output {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.wpcf7 .wpcf7-display-none {
+    display: none;
+}
+.wpcf7 .wpcf7-validation-errors {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.wpcf7 .wpcf7-mail-sent-ok {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.req {
+    font-size: 12px;
+    font-weight: normal;
+    vertical-align: baseline;
+}
+.screen-reader-response {
+    display: none;
+}
+.wpcf7-not-valid-tip {
+    font-size: 14px;
+    color: #a94442;
 }

@@ -101,3 +101,22 @@ function getAllPost() {
     $post_query = new WP_Query($args);
     return $post_query;
 }
+
+/**
+ * 予約フォームでのみcontact-form-7にcssを適用する
+ *
+ * @return void
+ */
+function my_contact_enqueue_scripts(){
+    wp_deregister_script('contact-form-7');
+    wp_deregister_style('contact-form-7');
+    if (is_page('reserve') || is_page('reserve-thanks')) {
+        if (function_exists( 'wpcf7_enqueue_scripts')) {
+            wpcf7_enqueue_scripts();
+        }
+        if ( function_exists( 'wpcf7_enqueue_styles' ) ) {
+            wpcf7_enqueue_styles();
+        }
+    }
+}
+add_action('wp_enqueue_scripts', 'my_contact_enqueue_scripts');
