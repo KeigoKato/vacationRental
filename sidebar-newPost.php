@@ -1,6 +1,8 @@
 <div class="col-sm-12">
     <div class="card bg-light mb-3 rounded-0 border-dark">
-        <div class="card-header text-center text-white rounded-0">最新10件の投稿</div>
+        <a href="<?php echo esc_url(home_url('/blog')); ?>">
+            <div class="card-header text-center text-white rounded-0">最新投稿</div>
+        </a>
         <ul class="list-group list-group-flush">
             <?php wp_get_archives(array(
                 'type'   => 'postbypost',
