@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>
         <!-- Required meta tags -->
@@ -8,7 +8,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-        <title>Hello, world!</title>
+        <title><?php bloginfo('name'); ?></title>
         <?php
             wp_enqueue_style(
                 'base-style',
@@ -20,7 +20,7 @@
         ?>
     </head>
 
-    <body>
+    <body <?php body_class(); ?>>
         <header>
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg navbar-light">
@@ -65,36 +65,45 @@
                             </li>
                         </ul>
                     </div>
+                    <form class="form-inline pl-sm-2 my-2 my-lg-0" action="<?php echo home_url('/'); ?>" method="get">
+                        <input class="form-control mr-sm-2" type="search" placeholder="記事を検索" value="<?php the_search_query(); ?>" name="s" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
+                    </form>
                 </nav>
             </div>
 
+            <?php global $template; ?>
+            <?php if (basename($template) != '404.php'): ?>
             <div class="cover text-center text-white">
                 <section>
+
+                    <h1 class="display-4 py-4">
                     <!-- display-4...文字の大きさを指定する -->
                     <?php if (is_front_page()): ?>
-                    <h1 class="display-4 py-4">
-                        Logo or Title
+                    Logo or Title
+                    <?php elseif (is_month()): ?>
+                    <?php the_time('Y年n月'); ?>の投稿一覧
+                    <?php elseif (is_category()): ?>
+                    カテゴリー<br>
+                    「<?php wp_title(''); ?>」の投稿一覧
+                    <?php elseif (is_single()): ?>
+                    投稿記事 詳細
+                    <?php elseif (is_page('blog')): ?>
+                    投稿記事 一覧
+                    <?php elseif (is_search()): ?>
+                    「<?php the_search_query(); ?>」の検索結果<br>
+                    <?php elseif (is_page('reserve') || is_page('reserve-thanks')): ?>
+                    ご予約フォーム<br>
+                    <?php elseif (is_page('contact') || is_page('contact-thanks')): ?>
+                    お問い合わせフォーム
+                    <?php endif; ?>
                     </h1>
+
+                    <?php if (is_front_page()): ?>
                     <p class="lead"><?php bloginfo('description'); ?></p>
                     <!-- lead...テキストを目立たせる -->
-                    <?php elseif (is_month()): ?>
-                    <h1 class="display-4 py-4">
-                        <?php the_time('Y年n月'); ?>の投稿一覧
-                    </h1>
-                    <?php elseif (is_category()): ?>
-                    <h1 class="display-4 py-4">
-                        カテゴリー<br>
-                        「<?php wp_title(''); ?>」の投稿一覧
-                    </h1>
-                    <?php elseif (is_single()): ?>
-                    <h1 class="display-4 py-4">
-                        投稿記事 詳細<br>
-                    </h1>
-                    <?php elseif (is_page('blog')): ?>
-                    <h1 class="display-4 py-4">
-                        投稿記事 一覧<br>
-                    </h1>
                     <?php endif; ?>
                 </section>
             </div>
+            <?php endif; ?>
         </header>
