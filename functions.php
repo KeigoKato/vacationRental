@@ -120,3 +120,13 @@ function my_contact_enqueue_scripts(){
     }
 }
 add_action('wp_enqueue_scripts', 'my_contact_enqueue_scripts');
+
+/**
+ * 投稿画面ではビジュアルモードがデフォルトになるように設定する
+ *
+ * @return void
+ */
+function my_wp_default_editor() {
+    return 'tinymce';    // ビジュアルモードは「tinymce」でエディターモードは「html」
+}
+add_filter('wp_default_editor', 'my_wp_default_editor');

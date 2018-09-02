@@ -4,19 +4,19 @@
         <!-- Required meta tags -->
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="<?php echo esc_url(get_stylesheet_uri()); ?>">
 
         <title><?php bloginfo('name'); ?></title>
         <?php
-            wp_enqueue_style(
-                'base-style',
-                esc_url(get_stylesheet_uri()),
-                array(),
-                '1.0',
-                'all'
-            );
+            // wp_enqueue_style(
+            //     'base-style',
+            //     esc_url(get_stylesheet_uri()),
+            //     array(),
+            //     '1.0',
+            //     'all'
+            // );
         ?>
     </head>
 
@@ -61,7 +61,7 @@
                                 <a class="nav-link" href="#">予約プラン</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">お問い合わせ</a>
+                                <a class="nav-link" href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせ</a>
                             </li>
                         </ul>
                     </div>
