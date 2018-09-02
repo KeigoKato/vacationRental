@@ -39,31 +39,18 @@
                     <div class="collapse navbar-collapse" id="navbarText">
                         <!-- collapse...基本的には折りたたむが、
                         navbar-collapse...ブラウザ幅がlg以下になったらcollapseする
-                        collapse navbar-collapseと書くとナビゲーションバー内に切り替え表示されるコンテンツを指定する -->
-                        <ul class="navbar-nav ml-auto">
-                            <!-- navbar-nav...ナビゲーションバー内にナビゲーションを作成する
-                            ml-auto...margin-left:auto;にすることで左端にくる -->
-                            <li class="nav-item">
-                                <!-- nav-item...ナビゲーション項目を作成する -->
-                                <a class="nav-link" href="#">館内施設</a>
-                                <!-- nav-link...ナビゲーションリンクを作成 -->
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">お部屋</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">お食事</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">周辺観光</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">予約プラン</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせ</a>
-                            </li>
-                        </ul>
+                        collapse navbar-collapseと書くとナビゲーションバー内に切り替え表示されるコンテンツを指定する
+                            navbar-nav...ナビゲーションバー内にナビゲーションを作成する
+                            ml-auto...margin-left:auto;にすることで左端にくる
+                                nav-item...ナビゲーション項目を作成する
+                                nav-link...ナビゲーションリンクを作成 -->
+                        <?php
+                            wp_nav_menu(array(
+                                'container' => false,
+                                'items_wrap' => '<ul class="navbar-nav ml-auto">%3$s</ul>',
+                                'theme_location' => 'header',
+                            ));
+                        ?>
                     </div>
                     <form class="form-inline pl-sm-2 my-2 my-lg-0" action="<?php echo home_url('/'); ?>" method="get">
                         <input class="form-control mr-sm-2" type="search" placeholder="記事を検索" value="<?php the_search_query(); ?>" name="s" aria-label="Search">
@@ -105,6 +92,7 @@
                     <p class="lead"><?php bloginfo('description'); ?></p>
                     <!-- lead...テキストを目立たせる -->
                     <?php endif; ?>
+
                 </section>
             </div>
             <?php endif; ?>

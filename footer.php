@@ -1,26 +1,13 @@
         <footer>
             <div class="text-light py-4">
                 <div class="container text-center">
-                    <ul class="nav justify-content-center ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">館内施設</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">お部屋</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">お食事</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">周辺観光</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">予約プラン</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">お問い合わせ</a>
-                        </li>
-                    </ul>
+                    <?php
+                    wp_nav_menu(array(
+                        'container' => false,
+                        'items_wrap' => '<ul class="nav justify-content-center ml-auto">%3$s</ul>',
+                        'theme_location' => 'footer',
+                    ));
+                    ?>
                     <h1 class="py-3"><a href="<?php echo home_url(); ?>">Site Logo</a></h1>
                     <p class="footer-address">
                         東京都目黒区大岡山<br>
@@ -38,10 +25,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script>
-            console.log('見れた？');
-            document.addEventListener( 'wpcf7submit', function( event ) {
-                alert( "Fire!" );
-            }, false );
+            // console.log('見れた？');
+            // document.addEventListener( 'wpcf7submit', function( event ) {
+            //     alert( "Fire!" );
+            // }, false );
         </script>
     </body>
 </html>

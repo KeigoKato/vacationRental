@@ -4,8 +4,63 @@ function custom_theme_setup() {
     add_theme_support('automatic-feed-links');    // head内にフィードリンクを出力
     add_theme_support('title-tag');               // タイトルタグを動的に出力
     add_theme_support('post-thumbnails');         // アイキャッチ画像を有効化
+    add_theme_support('menus');                   // カスタムメニューを有効にする
+    register_nav_menus(array(                     // テーマの位置のスラッグ名を説明を配列として渡すのだが、これがあればadd_theme_supportはいらない
+        'header' => 'ヘッダーナビゲーション',
+        'footer' => 'フッターナビゲーション',
+    ));
 }
 add_action('after_setup_theme', 'custom_theme_setup');
+
+
+
+// _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+/**
+ * カスタムメニューレイアウト
+ */
+
+/**
+ * カスタムメニューのulタグとliタグのidを削除する
+ *
+ * @param [type] $id
+ * @return void
+ */
+function removeId($id) {
+    return $id = array();
+}
+add_filter('nav_menu_item_id', 'removeId', 1000);
+
+/**
+ * カスタムメニューのクラスを全て削除してから新しいクラスをliタグに付与する
+ *
+ * @param [type] $classes
+ * @param [type] $item
+ * @return void
+ */
+function remove_to_currentClass( $classes, $item ) {
+    $classes = array();
+    // if( $item -> current == true ) {
+        $classes[] = 'nav-item';
+    // }
+    return $classes;
+}
+add_filter( 'nav_menu_css_class', 'remove_to_currentClass', 10, 2 );
+
+/**
+ * カスタムメニューのaタグのクラスを付与する
+ *
+ * @param [type] $item_output
+ * @param [type] $item
+ * @return void
+ */
+function add_class_on_link($item_output, $item){
+    return preg_replace('/(<a.*?)/', '$1' . " class='nav-link'", $item_output);
+}
+add_filter('walker_nav_menu_start_el', 'add_class_on_link', 10, 4);
+
+// _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+// _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
 
 /**
  * 投稿内の画像にクラスをつける
