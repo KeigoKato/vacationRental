@@ -96,6 +96,8 @@
                     ご予約フォーム<br>
                     <?php elseif (is_page('contact') || is_page('contact-thanks')): ?>
                     お問い合わせフォーム
+                    <?php elseif (is_post_type_archive('plans')): ?>
+                    宿泊プラン
                     <?php endif; ?>
                     </h1>
 

@@ -160,21 +160,21 @@
             <div class="container">
                 <div class="row reco-plan py-5">
                     <div class="col-12 mx-auto">
-                        <h2 class="display-5 pt-5 pb-4 text-center"><a href="#">秋の予約プラン</a></h2>
+                        <h2 class="display-5 pt-5 pb-4 text-center"><a href="<?php echo esc_url(get_post_type_archive_link('plans')); ?>">宿泊プラン</a></h2>
                         <section>
                             <div class="card-deck">
                                 <!-- card-deck...一連のカードを連結せずに均一サイズでグループ化するコンポーネントであり、card-groupとちょっと違う -->
                                 <?php for ($i=0; $i<3; $i++): ?>
-                                    <div class="card border-0 rounded-0">
-                                        <a href="#">
-                                            <img class="card-img-top rounded-0" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/common/noimage-large.png" alt="Card image cap">
-                                        </a>
-                                        <div class="card-body text-center">
-                                            <h5 class="card-title py-2"><a class="card-link" href="#">秋の準備開始</a></h5>
-                                            <p class="card-text">
-                                                祇園精舎の鐘の声、諸行無常の響きあり、沙羅双樹の花の色、盛者必衰の理を表す
-                                            </p>
-                                        </div>
+                                <div class="card border-0 rounded-0 col-sm-4">
+                                    <a href="#">
+                                        <img class="card-img-top rounded-0" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/common/noimage-large.png" alt="Card image cap">
+                                    </a>
+                                    <div class="card-body text-left">
+                                        <h5 class="card-title py-2"><a class="card-link" href="#">秋の準備開始</a></h5>
+                                        <p class="card-text">
+                                            祇園精舎の鐘の声、諸行無常の響きあり、沙羅双樹の花の色、盛者必衰の理を表す
+                                        </p>
+                                    </div>
                                 </div>
                                 <?php endfor; ?>
                             </div>

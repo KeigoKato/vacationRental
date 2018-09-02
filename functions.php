@@ -130,3 +130,17 @@ function my_wp_default_editor() {
     return 'tinymce';    // ビジュアルモードは「tinymce」でエディターモードは「html」
 }
 add_filter('wp_default_editor', 'my_wp_default_editor');
+
+
+function custom_register_post_type() {
+    $args = array(
+        'label'        => '宿泊プラン一覧',                                                     // ここで指定した文字列が管理画面に表示される
+        'hierarchical' => false,                                                                // デフォルトの投稿と同じ
+        'public'       => true,                                                                 // 投稿タイプを公開にする
+        'has_archive'  => true,                                                                 // この投稿タイプのアーカイブを有効にする
+        'supports'     => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),    // どの機能を有効にするかをここで指定する
+        'rewrite'      => array('with_front' => false),                                         // この投稿タイプのパーマリンクの形式を変更する
+    );
+    register_post_type('plans', $args);                                                         // plansというスラッグ名でカスタム投稿タイプを登録
+}
+add_action('init', 'custom_register_post_type');
