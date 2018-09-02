@@ -164,7 +164,9 @@
                         <section>
                             <div class="card-deck">
                                 <!-- card-deck...一連のカードを連結せずに均一サイズでグループ化するコンポーネントであり、card-groupとちょっと違う -->
-                                <?php for ($i=0; $i<3; $i++): ?>
+                                <?php $plans_query = getAllPlans(); ?>
+                                <?php if ($plans_query->have_posts()): ?>
+                                <?php while ($plans_query->have_posts()): $plans_query->the_post(); ?>
                                 <div class="card border-0 rounded-0 col-sm-4">
                                     <a href="#">
                                         <img class="card-img-top rounded-0" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/common/noimage-large.png" alt="Card image cap">
@@ -176,7 +178,8 @@
                                         </p>
                                     </div>
                                 </div>
-                                <?php endfor; ?>
+                                <?php endwhile; ?>
+                                <?php endif; ?>
                             </div>
                         </section>
                     </div>

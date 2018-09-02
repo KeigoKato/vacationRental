@@ -103,6 +103,20 @@ function getAllPost() {
 }
 
 /**
+ * カスタム投稿ページ(plansスラッグ)を表示するためのメソッドを定義
+ *
+ * @return void
+ */
+function getAllPlans() {
+    $args = array(
+        'post_type' => 'plans',
+        'posts_per_page' => 10,
+    );
+    $plans_query = new WP_Query($args);
+    return $plans_query;
+}
+
+/**
  * 予約フォームでのみcontact-form-7にcssを適用する
  *
  * @return void
